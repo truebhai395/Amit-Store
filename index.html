@@ -78,7 +78,7 @@ function submitOrder(){
  const msg=document.getElementById("formMessage");
  if(!cart.length){msg.textContent="Please add a coin to your cart first.";return;}
  if(!document.getElementById("customerName").value.trim()){msg.textContent="Please enter your name.";return;}
- if(WHATSAPP_NUMBER.includes("X")){msg.textContent="Demo setup: replace 91XXXXXXXXXX in the HTML with your WhatsApp number before publishing. No order was sent.";return;}
+ if(WHATSAPP_NUMBER.includes("X")){msg.textContent="Demo setup: replace 919454332874 in the HTML with your WhatsApp number before publishing. No order was sent.";return;}
  const lines=cart.map(x=>{const p=products.find(p=>p.id===x.id);return `• ${p.name} (${p.year}) × ${x.qty} — ${money(p.price*x.qty)}`;});
  const total=cart.reduce((n,x)=>n+products.find(p=>p.id===x.id).price*x.qty,0);
  const textMsg=["Hello Amit Store, I would like to place an order enquiry.","",...lines,`Estimated sample total: ${money(total)}`,"",`Name: ${document.getElementById("customerName").value.trim()}`,`Phone: ${document.getElementById("customerPhone").value.trim()}`,`City: ${document.getElementById("customerCity").value.trim()}`,`Address: ${document.getElementById("customerAddress").value.trim()}`,`Note: ${document.getElementById("customerNote").value.trim()}`,"","Please confirm stock, final price and delivery details."].join("\n");
@@ -86,4 +86,5 @@ function submitOrder(){
 }
 document.getElementById("search").addEventListener("input",render);document.getElementById("sort").addEventListener("change",render);render();
 </script>
+ index.html
 </body></html>
