@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#21170f">
+<title>Amit Store | Antique Coins</title>
+<style>
+:root{--ink:#21170f;--paper:#f6edda;--gold:#c99b4b;--muted:#77654d;--card:#fffaf0;--line:#dfcfb0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif}
+header{background:var(--ink);color:var(--paper);padding:15px 5%;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:3px solid var(--gold)}
+.brand{font-size:1.4rem;font-weight:bold;letter-spacing:.08em}.brand span{color:var(--gold)}nav{display:flex;gap:15px;flex-wrap:wrap}nav a{color:var(--paper);text-decoration:none;font: .9rem Arial,sans-serif}
+.hero{padding:55px 5%;text-align:center;background:linear-gradient(135deg,#2c1d12,#4a311a);color:var(--paper)}.eyebrow{color:var(--gold);font:700 .72rem Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+h1{font-size:clamp(2.4rem,7vw,4.4rem);line-height:1.05;margin:12px auto}.hero p{font:1rem/1.7 Arial,sans-serif;color:#e7d8bd;max-width:620px;margin:16px auto 22px}
+.button{display:inline-block;background:var(--gold);color:var(--ink);border:0;border-radius:3px;padding:12px 17px;font:700 .9rem Arial,sans-serif;cursor:pointer;text-decoration:none}.button.secondary{background:transparent;border:1px solid var(--gold);color:var(--paper)}
+.section{padding:42px 5%;max-width:1200px;margin:auto}.section-head{text-align:center;margin-bottom:24px}.section-head h2{font-size:clamp(1.8rem,4vw,2.5rem);margin:8px 0}.section-head p{font:.93rem/1.6 Arial,sans-serif;color:var(--muted)}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.tools input,.tools select,.checkout input,.checkout textarea{min-width:0;padding:12px;border:1px solid var(--line);border-radius:3px;background:#fffdf7;font: .95rem Arial,sans-serif}.tools input{flex:1}.tools select{width:160px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{background:var(--card);border:1px solid var(--line);overflow:hidden;box-shadow:0 7px 20px #3b29100c}
+.art{height:170px;display:grid;place-items:center;background:radial-gradient(circle,#e7d3a6,#c4a56b 65%,#8b6737)}.coin{width:125px;height:125px;border-radius:50%;border:7px ridge #8f682d;display:grid;place-items:center;text-align:center;color:#65471f;background:radial-gradient(circle at 35% 30%,#f5e3b2,#c49a4e 65%,#896127);box-shadow:0 7px 12px #38220a55,inset 0 0 0 3px #e3c681,inset 0 0 0 7px #a47a38}.coin strong{font-size:1.3rem;display:block}.coin small{font-size:.55rem;letter-spacing:.08em;text-transform:uppercase}
+.content{padding:16px}.tag{font:700 .67rem Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#8a632a}.content h3{font-size:1.2rem;margin:8px 0}.content p{font:.88rem/1.5 Arial,sans-serif;color:var(--muted);min-height:38px}.price{font-size:1.18rem;font-weight:bold;margin:12px 0}.card-actions{display:flex;gap:8px;flex-wrap:wrap}.card-actions .button{flex:1;text-align:center;padding:11px 8px}.card-actions .details{background:transparent;border:1px solid var(--gold)}
+.notice{font: .8rem/1.5 Arial,sans-serif;color:var(--muted);text-align:center;margin:20px auto;max-width:850px}
+.about{background:#e9dcc1;border-block:1px solid #d7c29b}.about-inner{max-width:900px;margin:auto;text-align:center;padding:38px 5%}.about h2{font-size:2rem;margin:8px}.about p{font:1rem/1.8 Arial,sans-serif;color:#5f4b32}
+.checkout{background:#fffaf0;border:1px solid var(--line);padding:22px;max-width:760px;margin:25px auto 0}.checkout h3{margin-top:0}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.checkout input,.checkout textarea{width:100%}.checkout textarea{min-height:85px;resize:vertical}.checkout label{font: .85rem Arial,sans-serif;color:var(--muted);display:block;margin:0 0 6px}.field{margin-bottom:12px}.checkout .button{width:100%}.cartbar{position:sticky;bottom:0;background:#21170f;color:var(--paper);padding:12px 5%;display:flex;justify-content:space-between;align-items:center;gap:12px;z-index:5;font: .9rem Arial,sans-serif;border-top:2px solid var(--gold)}.cartbar .button{white-space:nowrap}
+footer{background:var(--ink);color:var(--paper);padding:25px 5%;text-align:center;font:.85rem/1.7 Arial,sans-serif}footer strong{font: bold 1.1rem Georgia,serif}footer a{color:var(--gold)}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){header{justify-content:center;text-align:center}nav{justify-content:center;gap:12px}.grid{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.cartbar{font-size:.8rem}.section{padding-top:32px;padding-bottom:32px}}
+</style>
+</head>
+<body>
+<header><div class="brand">AMIT <span>STORE</span></div><nav><a href="#home">Home</a><a href="#collection">Coins</a><a href="#checkout">Checkout</a><a href="#contact">Contact</a></nav></header>
+<main>
+<section class="hero" id="home"><div class="eyebrow">A Collector's Corner</div><h1>History in Every <span style="color:var(--gold)">Coin.</span></h1><p>Explore collectible coins, view individual prices, and send your order enquiry to Amit Store.</p><a class="button" href="#collection">Shop the Collection</a> <a class="button secondary" href="#checkout">View Checkout</a></section>
+<section class="section" id="collection"><div class="section-head"><div class="eyebrow">The Collection</div><h2>Featured Coins</h2><p>Sample products are shown below. Replace these with your actual coin details, photos and verified prices.</p></div>
+<div class="tools"><input id="search" type="search" placeholder="Search coins..." aria-label="Search coins"><select id="sort" aria-label="Sort by price"><option value="default">Sort: Featured</option><option value="low">Price: Low to High</option><option value="high">Price: High to Low</option></select></div>
+<div class="grid" id="products"></div>
+<p class="notice">Sample listings only—not real coin photographs, appraisals, or claims of rarity. Before selling, verify authenticity, condition and applicable rules. Orders are requests until the seller confirms stock, final price and delivery.</p>
+<div class="checkout" id="checkout"><h3>Checkout / Order Enquiry</h3>
+<button class="button" type="button" onclick="payWithUPI()">Proceed to Payment</button>
+<p class="notice">Your payment details are shown only after you proceed to payment. Confirm payment in your own UPI app/bank before shipping.</p><p class="notice" style="text-align:left;margin:0 0 16px">Add your contact details and submit the order to send it through WhatsApp. No online payment is processed by this demo page.</p><div class="field"><label for="customerName">Your name</label><input id="customerName" autocomplete="name" placeholder="Enter your name"></div><div class="formgrid"><div class="field"><label for="customerPhone">Phone number</label><input id="customerPhone" inputmode="tel" autocomplete="tel" placeholder="Your phone number"></div><div class="field"><label for="customerCity">City / delivery area</label><input id="customerCity" autocomplete="address-level2" placeholder="Your city"></div></div><div class="field"><label for="customerAddress">Delivery address (optional until confirmed)</label><textarea id="customerAddress" autocomplete="street-address" placeholder="Address"></textarea></div><div class="field"><label for="customerNote">Order note</label><textarea id="customerNote" placeholder="Questions or delivery preferences"></textarea></div><button class="button" onclick="submitOrder()">Send Order Enquiry on WhatsApp</button><p class="notice" id="formMessage" aria-live="polite"></p></div>
+</section>
+<section class="about" id="about"><div class="about-inner"><div class="eyebrow">About Amit Store</div><h2>For people who love history</h2><p>Amit Store showcases collectible coins for enthusiasts. Add your store story, location, shipping details and return policy here. Coin values depend on authenticity, condition, rarity and collector demand.</p></div></section>
+</main>
+<div class="cartbar"><span id="cartSummary">Cart: 0 items · ₹0</span><a class="button" href="#checkout">Checkout</a></div>
+<footer id="contact"><strong>AMIT STORE</strong><br>Antique & Collectible Coins<br>
+<a href="https://wa.me/919454332874">WhatsApp: 9454332874</a><br>
+<a href="mailto:truebhai395@gmail.com">Email: truebhai395@gmail.com</a><br>
+<span>UPI ID: 9555326783-3@ybl</span><br><br>© <span id="year"></span> Amit Store</footer>
+<script>
+const WHATSAPP_NUMBER = "919454332874"; // Store WhatsApp number, digits only, including country code.
+const UPI_ID = "9555326783-3@ybl";
+const products = [
+ {id:1,name:"Vintage Indian Coin",year:"1947 (sample)",price:150,desc:"Add denomination, metal and verified condition.",mark:"1947"},
+ {id:2,name:"Old One-Rupee Coin",year:"Year to confirm",price:250,desc:"Add the actual year, mint mark and condition.",mark:"₹ 1"},
+ {id:3,name:"Antique Collector Coin",year:"Year to confirm",price:500,desc:"Add verified history and condition details.",mark:"19—"}
+];
+let cart=[];
+document.getElementById("year").textContent=new Date().getFullYear();
+const money=n=>"₹"+n.toLocaleString("en-IN");
+function render(){
+ const query=document.getElementById("search").value.toLowerCase().trim();
+ const sort=document.getElementById("sort").value;
+ let list=products.filter(p=>(p.name+" "+p.year+" "+p.desc).toLowerCase().includes(query));
+ if(sort==="low")list.sort((a,b)=>a.price-b.price); if(sort==="high")list.sort((a,b)=>b.price-a.price);
+ document.getElementById("products").innerHTML=list.map(p=>`<article class="card"><div class="art"><div class="coin"><div><small>Sample coin</small><strong>${p.mark}</strong><small>${p.year}</small></div></div></div><div class="content"><div class="tag">Sample listing ${String(p.id).padStart(2,"0")}</div><h3>${p.name}</h3><p>${p.desc}</p><div class="price">${money(p.price)}</div><div class="card-actions"><button class="button" onclick="addToCart(${p.id})">Add to Cart</button><button class="button details" onclick="buyNow(${p.id})">Buy Now</button></div></div></article>`).join("") || "<p>No coins found. Try another search.</p>";
+ updateCart();
+}
+function addToCart(id){const p=products.find(x=>x.id===id);const item=cart.find(x=>x.id===id);if(item)item.qty++;else cart.push({id,qty:1});updateCart();document.getElementById("formMessage").textContent=p.name+" added to your cart.";}
+function buyNow(id){addToCart(id);document.getElementById("checkout").scrollIntoView({behavior:"smooth"});}
+function updateCart(){const count=cart.reduce((n,x)=>n+x.qty,0),total=cart.reduce((n,x)=>n+products.find(p=>p.id===x.id).price*x.qty,0);document.getElementById("cartSummary").textContent=`Cart: ${count} item${count===1?"":"s"} · ${money(total)}`;}
+function payWithUPI(){
+ const total=cart.reduce((n,x)=>n+products.find(p=>p.id===x.id).price*x.qty,0);
+ if(!cart.length){document.getElementById("formMessage").textContent="Please add a coin to your cart first.";return;}
+ const name="Amit Store coin order";
+ const link="upi://pay?pa="+encodeURIComponent(UPI_ID)+"&pn="+encodeURIComponent("Amit Store")+"&am="+encodeURIComponent(total.toFixed(2))+"&cu=INR&tn="+encodeURIComponent(name);
+ window.location.href=link;
+}
+function submitOrder(){
+ const msg=document.getElementById("formMessage");
+ if(!cart.length){msg.textContent="Please add a coin to your cart first.";return;}
+ if(!document.getElementById("customerName").value.trim()){msg.textContent="Please enter your name.";return;}
+ if(WHATSAPP_NUMBER.includes("X")){msg.textContent="Demo setup: replace 91XXXXXXXXXX in the HTML with your WhatsApp number before publishing. No order was sent.";return;}
+ const lines=cart.map(x=>{const p=products.find(p=>p.id===x.id);return `• ${p.name} (${p.year}) × ${x.qty} — ${money(p.price*x.qty)}`;});
+ const total=cart.reduce((n,x)=>n+products.find(p=>p.id===x.id).price*x.qty,0);
+ const textMsg=["Hello Amit Store, I would like to place an order enquiry.","",...lines,`Estimated sample total: ${money(total)}`,"",`Name: ${document.getElementById("customerName").value.trim()}`,`Phone: ${document.getElementById("customerPhone").value.trim()}`,`City: ${document.getElementById("customerCity").value.trim()}`,`Address: ${document.getElementById("customerAddress").value.trim()}`,`Note: ${document.getElementById("customerNote").value.trim()}`,"","Please confirm stock, final price and delivery details."].join("\n");
+ window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(textMsg),"_blank","noopener");
+}
+document.getElementById("search").addEventListener("input",render);document.getElementById("sort").addEventListener("change",render);render();
+</script>
+</body></html>
